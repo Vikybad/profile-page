@@ -5,6 +5,7 @@
     --secondary-color: #2c3e50;
     --background-color: #f4f4f4;
     --text-color: #333;
+    /* --header-height: 100%; */
 }
 
 * {
@@ -25,8 +26,13 @@ header {
     padding: 1rem 0;
     position: fixed;
     width: 100%;
+    margin: 0 auto;
     top: 0;
     z-index: 1000;
+}
+
+.separator {
+    color: #f4f4f4;
 }
 
 .profile-image {
@@ -110,7 +116,7 @@ h4 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.7rem;
     text-align: center;
 }
 
@@ -120,10 +126,32 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
+.profession {
+    text-align: center;
+}
+
+#about {
+    text-align: justify;
+}
+
+.cert-link {
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.contact-info:hover,
+.cert-link:hover {
+    border-bottom-color: #007bff;
+}
+
 .contact-info {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease;
 }
 
 .contact-info a {
@@ -195,7 +223,8 @@ h2 {
 
 .job,
 .project,
-.education {
+.education,
+.certification {
     background-color: white;
     padding: 1.5rem;
     border-radius: 5px;
@@ -203,14 +232,19 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-#education .education {
+#education,
+#certification,
+.education,
+.certification {
     display: block;
     margin-bottom: 1rem;
 }
 
-#education h3,
-#education h4,
-#education p {
+#education,
+#certification,
+h4,
+h3,
+p {
     margin-bottom: 0.5rem;
 }
 
@@ -223,6 +257,18 @@ h2 {
 
     #education .education>* {
         flex: 1;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #certification .certification {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #certification .certification>* {
+        flex: 2;
     }
 }
 
@@ -241,4 +287,16 @@ footer {
     padding: 1rem;
     background-color: var(--secondary-color);
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        margin: 0 0.4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li {
+        margin: 0 0.1rem;
+    }
 }
