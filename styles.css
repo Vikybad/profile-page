@@ -133,7 +133,7 @@ h2 {
     transition: color 0.3s ease;
 }
 
-#projects .project {
+#personal_projects .project {
     background-color: white;
     padding: 1.5rem;
     border-radius: 5px;
@@ -141,16 +141,37 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-#projects h3 {
+#professional_projects .project {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+#personal_projects h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
-#projects p {
+#professional_projects h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+#personal_projects p {
     margin-bottom: 1rem;
 }
 
-#projects ul {
+#professional_projects p {
+    margin-bottom: 1rem;
+}
+
+#personal_projects ul {
+    padding-left: 1.5rem;
+}
+
+#professional_projects ul {
     padding-left: 1.5rem;
 }
 
