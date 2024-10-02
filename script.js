@@ -2,11 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to check if an element is in viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
+        const bottom = ((window.innerHeight + window.innerHeight / 4) || (document.documentElement.clientHeight + document.documentElement.clientHeight / 4))
+        const right = ((window.innerWidth + window.innerWidth / 4) || (document.documentElement.clientWidth + document.documentElement.clientWidth / 4))
         return (
             rect.top >= 0 &&
             rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            rect.bottom <= bottom &&
+            rect.right <= right
         );
     }
 
@@ -33,16 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 // Immediately show the target section
                 targetElement.classList.add('animate');
-                
+
                 // Smooth scroll to the target
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
-                
+
                 // Update URL without page reload
                 history.pushState(null, null, `#${targetId}`);
             }
@@ -71,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const span = document.createElement('span');
         span.textContent = nameText[i];
         span.style.opacity = '0';
-        nameElement.appendChild(span);
+        // nameElement.appendChild(span);
 
         setTimeout(() => {
             span.style.opacity = '1';
