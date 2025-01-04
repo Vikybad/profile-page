@@ -272,6 +272,17 @@ p {
     }
 }
 
+.fixed-linkedin-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
 .date {
     color: var(--primary-color);
     font-style: italic;
